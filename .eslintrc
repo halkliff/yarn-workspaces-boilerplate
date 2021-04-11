@@ -1,0 +1,32 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "parser": "typescript" }
+    ],
+    "quotes": [1, "single", { "allowTemplateLiterals": true }],
+    "linebreak-style": ["warning", "windows"],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": ["off", "never"],
+    "import/extensions": ["off", "never"]
+  }
+}
