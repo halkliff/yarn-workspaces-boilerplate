@@ -26,6 +26,7 @@ _(Optional)_ to start the project with a clean commit tree:
 ## Features
 
 * Uses the [Yarn version](https://yarnpkg.com/features/release-workflow) plugin to improve monorepo release workflow
+* Uses the `yarn upgrade-interactive` [CLI Command]([https://](https://yarnpkg.com/cli/upgrade-interactive)) plugin to help upgrading dependencies
 * Uses [commitlint](https://commitlint.js.org/) to standardize commit messages
 * Has a script to allow only the execution of yarn when starting up the project (Credits: [Angular Project](https://github.com/angular/angular/blob/11.0.x/tools/yarn/check-yarn.js))
 * Pre-made typescript scripts folder with an example build script and ready-made logging utils (for future application scripts)
