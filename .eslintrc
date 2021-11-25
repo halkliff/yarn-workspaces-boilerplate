@@ -8,25 +8,42 @@
   "extends": [
     "eslint:recommended",
     "airbnb-base",
+    "prettier",
     "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2021,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier", "import"],
   "rules": {
     "prettier/prettier": [
       "error",
-      { "singleQuote": true, "parser": "typescript" }
+      { "singleQuote": true, "parser": "typescript", "endOfLine": "crlf" }
     ],
+    "import/no-unresolved": "error",
     "quotes": [1, "single", { "allowTemplateLiterals": true }],
-    "linebreak-style": ["warning", "windows"],
+    "linebreak-style": [1, "windows"],
     "@typescript-eslint/explicit-function-return-type": "off",
     "no-underscore-dangle": "off",
     "import/prefer-default-export": ["off", "never"],
-    "import/extensions": ["off", "never"]
+    "import/extensions": ["off", "never"],
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+
+        // use an array of glob patterns
+        "project": ["packages/*/tsconfig.json", "tsconfig.json"]
+      }
+    }
   }
 }
