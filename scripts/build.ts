@@ -5,7 +5,7 @@ log.info('Starting build process');
 /**
  * // This is an example script to build a package inside the `packages` folder.
  *
- * import execa from 'execa';
+ * import {execa} from 'execa';
  * import { copySync, removeSync } from 'fs-extra';
  *
  * const commandOpts = { stdio: 'inherit', shell: true };
